@@ -1,0 +1,1 @@
+Nama saya Darrell Zachary Gunawan
