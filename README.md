@@ -1,97 +1,49 @@
-📊 Project Title: Customer Churn Prediction Analysis
-An analysis of customer data to predict churn and identify key factors driving customer attrition. This project explores, visualizes, and models the dataset to provide actionable insights.
+# Panduan Sederhana: GitHub dengan Visual Studio Code
 
-Project Overview
-1. Business Problem
-A telecommunications company is experiencing high customer churn rates. The goal of this project is to build a machine learning model that can predict which customers are most likely to churn, allowing the company to proactively offer them incentives.
+Dokumen ini menjelaskan alur kerja dasar mulai dari membuat repository di GitHub, menghubungkannya ke VS Code, hingga mengirim perubahan kembali ke GitHub.
 
-2. Data Source
-The dataset used for this project is the "Telco Customer Churn" dataset, originally from Kaggle. It contains information about customer demographics, account details, and services they've signed up for.
+---
 
-Link to Dataset
+## Bagian 1: Membuat Repository di GitHub
 
-3. Methodology
-The project follows these steps:
+Langkah pertama adalah menyiapkan "wadah" untuk proyek Anda di situs GitHub.
 
-Data Cleaning & Preprocessing: Handling missing values, encoding categorical variables.
+1.  **Login ke Akun GitHub Anda.** Buka `github.com`.
+2.  **Buat Repository Baru.** Klik ikon `+` di pojok kanan atas, lalu pilih **New repository**.
+3.  **Isi Detail Repository:**
+    * **Repository name:** Beri nama yang singkat dan jelas untuk proyek Anda (misalnya, `latihan-git`).
+    * **Description (optional):** Beri deskripsi singkat tentang proyek Anda.
+    * Pilih **Public** agar bisa dilihat semua orang, atau **Private** jika hanya untuk Anda.
+    * **Sangat disarankan:** Centang kotak **Add a README file**. Ini akan memudahkan proses selanjutnya.
+4.  **Selesaikan.** Klik tombol hijau **Create repository**.
+5.  **Salin URL Repository.** Setelah repository dibuat, klik tombol hijau **<> Code**. Di bawah tab **HTTPS**, salin URL yang tersedia. URL ini akan kita gunakan di VS Code.
 
-Exploratory Data Analysis (EDA): Visualizing data to uncover trends and correlations.
+---
 
-Feature Engineering: Creating new features to improve model performance.
+## Bagian 2: Menghubungkan Repository ke VS Code
 
-Model Building: Training and evaluating several classification models (e.g., Logistic Regression, Random Forest, XGBoost).
+Sekarang kita akan mengambil repository dari GitHub dan membukanya di komputer lokal menggunakan VS Code. Proses ini disebut *cloning*.
 
-Model Evaluation: Assessing model performance using metrics like Accuracy, Precision, Recall, and F1-Score.
+1.  **Buka VS Code.**
+2.  **Buka Command Palette.** Tekan `Ctrl+Shift+P` (atau `Cmd+Shift+P` di Mac).
+3.  **Pilih Git: Clone.** Ketik `Git: Clone` di Command Palette dan tekan Enter.
+4.  **Tempel (Paste) URL.** Masukkan URL repository yang sudah Anda salin dari GitHub, lalu tekan Enter.
+5.  **Pilih Lokasi Folder.** VS Code akan meminta Anda memilih folder di komputer untuk menyimpan salinan proyek ini. Pilih lokasi yang Anda inginkan.
+6.  **Buka Repository.** Setelah proses *cloning* selesai, VS Code akan menampilkan notifikasi di pojok kanan bawah. Klik **Open** untuk membuka folder proyek tersebut.
 
-Conclusion: Summarizing findings and providing business recommendations.
+Sekarang, proyek Anda dari GitHub sudah ada di komputer lokal dan terbuka di VS Code.
 
-📈 Results & Key Findings
-The final XGBoost model achieved an accuracy of 82% on the test set.
+---
 
-Key predictors of churn include: contract type (month-to-month is high risk), tenure (newer customers churn more), and subscribing to fiber optic internet service.
+## Bagian 3: Membuat dan Menerapkan Perubahan
 
-Insight: Customers on short-term contracts with premium services are the most volatile segment.
+Ini adalah siklus kerja yang akan sering Anda lakukan: membuat perubahan, menyimpannya secara lokal (commit), dan mengirimkannya ke GitHub (push).
 
-A plot showing the most important features for predicting churn.
+1.  **Buat Perubahan pada File.** Buka salah satu file (misalnya `README.md`) dan tambahkan atau ubah beberapa baris teks. Simpan file tersebut (`Ctrl+S`).
+2.  **Buka Tab Source Control.** Di panel sebelah kiri VS Code, klik ikon yang terlihat seperti percabangan jalan (biasanya ikon ketiga dari atas). Di sini Anda bisa melihat semua file yang telah diubah.
+3.  **Stage Perubahan.** Di bawah judul "Changes", Anda akan melihat file yang baru saja Anda ubah. Arahkan kursor ke nama file dan klik ikon `+` (Stage Changes). Ini memberitahu Git bahwa Anda ingin menyertakan perubahan ini dalam simpanan (commit) berikutnya.
+4.  **Buat Pesan Commit.** Di bagian atas panel Source Control, ada kotak teks. Tulis pesan yang menjelaskan perubahan yang Anda buat (misalnya, "Memperbarui deskripsi pada README"). Pesan ini berfungsi sebagai catatan.
+5.  **Commit Perubahan.** Klik ikon centang (✓) di atas kotak pesan untuk menyimpan perubahan tersebut secara lokal di riwayat Git Anda.
+6.  **Push ke GitHub.** Setelah melakukan *commit*, tombol biru di bagian bawah kiri (status bar) akan berubah menjadi **Sync Changes** (biasanya dengan ikon awan/panah). Klik tombol tersebut untuk mengirim semua *commit* yang sudah Anda simpan ke repository di GitHub.
 
-⚙️ How to Reproduce
-To replicate the analysis, follow these steps:
-
-Dependencies
-This project uses Python 3.8. The main libraries are listed in requirements.txt.
-
-pandas
-
-numpy
-
-matplotlib
-
-seaborn
-
-scikit-learn
-
-xgboost
-
-Installation & Setup
-Clone this repository:
-
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-cd your-repo-name
-
-Create a virtual environment:
-
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-
-Install the required packages:
-
-pip install -r requirements.txt
-
-Download the dataset from the link above and place it in a data/ directory.
-
-Running the Analysis
-The analysis is contained within a Jupyter Notebook.
-
-Start Jupyter Lab:
-
-jupyter lab
-
-Open the churn-analysis.ipynb notebook and run the cells sequentially.
-
-📂 File Structure
-.
-├── data/
-│   └── WA_Fn-UseC_-Telco-Customer-Churn.csv
-├── notebooks/
-│   └── churn-analysis.ipynb
-├── src/
-│   └── helper_functions.py
-├── requirements.txt
-└── README.md
-
-📝 Future Work
-Deploy the model as a REST API for real-time predictions.
-
-Experiment with more advanced feature engineering techniques.
-
-Incorporate additional data sources, such as customer support logs.
+Selesai! Sekarang jika Anda membuka kembali halaman repository Anda di situs GitHub dan me-refresh halaman, Anda akan melihat perubahan yang baru saja Anda kirim dari VS Code.
