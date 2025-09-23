@@ -25,35 +25,10 @@ class ResponseModel(BaseModel):
     data: ItemResponse
 
 
-# Tugas 2
-
-class Old_User(BaseModel):
-    id: int
-    
-    username: str = Field(
-        ...,
-        min_length=2,
-        max_length=20,
-        pattern=r'^[a-zA-Z0-9]+$',
-        title='Username',
-        description='must be alpha-numeric',
-        example='Zenyass11'
-    )
-    
-    email: str
-    
-    age: Optional[int] = Field(
-        None,
-        ge=19,
-        le=50,
-        description="User age must be between 18 and 30",
-        example=25
-    )
-    
-    model_config = ConfigDict(extra="forbid")
 
 
 
+#Tugas 2
 
 # --- ENUMERATIONS ---
 class UserRole(str, Enum):
