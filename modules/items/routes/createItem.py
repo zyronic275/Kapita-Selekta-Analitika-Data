@@ -8,4 +8,8 @@ items: List[Item] = []
 @router.post("/items/", response_model=Item)
 def create_item(item: Item):
     items.append(item)
-    return item
+    return {
+        'success': True,
+        'message': 'New item successfully created',
+        'data': item
+    }
